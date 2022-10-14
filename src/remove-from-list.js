@@ -41,7 +41,7 @@ nextNode = thisNode.next;
 while(nextNode != null){
     if(nextNode.value == k){
         thisNode.next = nextNode.next;
-        // No more nodes, ie last node was to be removed
+        
         if(thisNode.next == null)
             break;
     }
