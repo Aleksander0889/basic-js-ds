@@ -42,20 +42,20 @@ class BinarySearchTree {
       };
       return data < node.data ?
       searchWithin(node.left, data):
-      searchWithin(node.require, data); 
+      searchWithin(node.right, data); 
     };
     // remove line with error and write your code here
   }
 
   find(data) {
-    return searchData(this.source , data);
+    return searchData(this.root1 , data);
     function searchData(node, data) {
-      if (!node) return null;
-      if (node.data === data) return node.data;
-      if (data < node.data) return searchData(node.left, data);
-      else return searchData(node.right, data)
+      if (!node) { return null }
+       else if(node.data === data){ return node }
+       else if(data < node.data) {return searchData(node.left, data)}
+      else {return searchData(node.right, data)}
     }
-
+    
     // remove line with error and write your code here
   }
 
@@ -64,14 +64,14 @@ class BinarySearchTree {
     function removeNode(node, data) {
       if (!node) {
         return null
-      };
+      }
       if(data < node.data) {
         node.left = removeNode(node.left, data);
         return node;
       } else if (node.data < data) {
         node.right = removeNode(node.right, data);
         return node; 
-      } else { if (!node.left && !node.right, data) {
+      } else { if (!node.left && !node.right) {         
         return null;
       } if (!node.left) {
         node = node.right;
@@ -84,12 +84,12 @@ class BinarySearchTree {
         let minFromRight = node.right;
         while (minFromRight.left) {
           minFromRight = minFromRight.left
-        }
+        };
         node.data = minFromRight.data;
         node.right = removeNode(node.right, minFromRight.data);
-        return node
+        return node;
       }
-    }
+    };
     // remove line with error and write your code here
   }
 
@@ -100,7 +100,7 @@ class BinarySearchTree {
       node = node.left;
     } 
     return node.data;
-     }
+     };
 
   max() {
     if (!this.root1) {return};
@@ -110,7 +110,7 @@ class BinarySearchTree {
     } 
     return node.data;
     // remove line with error and write your code here
-  }
+  };
 }
  
 module.exports = {

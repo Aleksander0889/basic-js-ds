@@ -37,7 +37,7 @@ class Queue {
           while (current.next) {
             current = current.next
           }
-          current.next =new ListNode(val)
+          current.next = new ListNode(val)
         }
          this.length++
   }
